@@ -11,7 +11,16 @@ composer require vietartisans/cpter
 # Usage
 **Example 1: Register a custom post type with default arguments**
 ```php
-$worker = new VA\CPTer\Provider('book', 'Book', 'Books');
+$book = new VA\CPTer\Provider('book', 'Book', 'Books');
+```
+**Example 2: Register a custom post type with specific arguments**
+```php
+$song = new VA\CPTer\Provider(
+            'song', 
+            'Song', 
+            'Songs', 
+            ['menu_icon' => 'dashicons-format-audio']
+        );
 ```
 
 
