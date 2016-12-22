@@ -62,6 +62,7 @@ class Provider
     }
     
     /**
+     * register CPT with merge arguments
      * 
      * @since 1.0.0
      */
@@ -71,12 +72,12 @@ class Provider
         
         // check result return
         if (is_wp_error($result)) wp_die($result->get_error_message());
-        
-        
     }
     
     /**
+     * handle and parse default arguments
      * 
+     * @since 1.0.0
      */
     public function getArgs()
     {
@@ -93,13 +94,13 @@ class Provider
 			'search_items'       => sprintf(__('Search %s'), $this->plural),
 			'not_found'          => sprintf(__('No %s'), $this->plural),
 			'not_found_in_trash' => sprintf(__('No %s found in Trash'), $this->plural),
-			'parent_item_colon'  => isset( $this->arg_overrides['hierarchical'] ) && $this->arg_overrides['hierarchical'] ? sprintf( __( 'Parent %s:', 'cpt-core' ), $this->single ) : null,
+			'parent_item_colon'  => isset($this->args['hierarchical']) && $this->args['hierarchical'] ? sprintf(__('Parent %s:'), $this->single ) : null,
 			'menu_name'          => $this->plural,
-			'insert_into_item'      => sprintf( __( 'Insert into %s', 'cpt-core' ), strtolower($this->single) ),
-			'uploaded_to_this_item' => sprintf( __( 'Uploaded to this %s', 'cpt-core' ), strtolower($this->single) ),
-			'items_list'            => sprintf( __( '%s list', 'cpt-core' ), $this->plural ),
-			'items_list_navigation' => sprintf( __( '%s list navigation', 'cpt-core' ), $this->plural ),
-			'filter_items_list'     => sprintf( __( 'Filter %s list', 'credit-helper-elite' ), strtolower($this->plural) )
+			'insert_into_item'      => sprintf(__('Insert into %s'), strtolower($this->single)),
+			'uploaded_to_this_item' => sprintf(__( 'Uploaded to this %s'), strtolower($this->single)),
+			'items_list'            => sprintf(__('%s list'), $this->plural),
+			'items_list_navigation' => sprintf(__('%s list navigation'), $this->plural),
+			'filter_items_list'     => sprintf(__('Filter %s list'), strtolower($this->plural))
 		);
 		
 		// Set default cpt parameters
@@ -113,7 +114,10 @@ class Provider
 			'supports'           => ['title', 'editor', 'excerpt'],
 		);
 		
-		return;
+		$this->args = wp_parse_args($this->args, $defaults);
+		$this->args['labels'] = wp_parse_args($this->args['label'], $labels);
+		
+		return $this->args;
     }
     
 }
