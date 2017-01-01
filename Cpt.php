@@ -107,7 +107,7 @@ class Cpt
 		);
 		
 		$this->args = wp_parse_args($this->args, $defaults);
-		$this->args['labels'] = wp_parse_args($this->args['label'], $labels);
+		$this->args['labels'] = wp_parse_args($this->args['labels'], $labels);
 		
 		return $this->args;
     }
