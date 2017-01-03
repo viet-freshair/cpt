@@ -111,11 +111,11 @@ class Provider
 			'show_ui'            => true,
 			'show_in_menu'       => true,
 			'has_archive'        => true,
-			'supports'           => ['title', 'editor', 'excerpt'],
+			'supports'           => ['title', 'editor', 'excerpt', 'thumbnail'],
 		);
 		
 		$this->args = wp_parse_args($this->args, $defaults);
-		$this->args['labels'] = wp_parse_args($this->args['label'], $labels);
+		$this->args['labels'] = wp_parse_args($this->args['labels'], $labels);
 		
 		return $this->args;
     }
