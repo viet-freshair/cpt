@@ -16,15 +16,17 @@ $book = new VA\Cpter\CptEngine('book', 'Book', 'Books');
 ## Register a custom post type with specific arguments
 ```php
 $song = new VA\Cpter\CptEngine(
-            'song', 
-            'Song', 
-            'Songs', 
-            ['menu_icon' => 'dashicons-format-audio']
-        );
+    'song', 
+    'Song', 
+    'Songs', 
+    ['menu_icon' => 'dashicons-format-audio']
+);
 ```
 
 ## Register a custom post type with meta fields
-**NOTE: ** We are using CMB2 to create meta fields for custom post type. See here to find out how to use it [Usage CMB2](https://github.com/WebDevStudios/CMB2/wiki/Basic-Usage). And you can see a list of available field types [here](https://github.com/WebDevStudios/CMB2/wiki/Field-Types#types).
+**NOTE:** We are using CMB2 to create meta fields for custom post type. 
+See [here](https://github.com/WebDevStudios/CMB2/wiki/Basic-Usage) to find out how to use CMB2.
+You can see a list of available field types [here](https://github.com/WebDevStudios/CMB2/wiki/Field-Types#types).
 ```php
 $book->registerMetafields(
 	[
@@ -79,6 +81,11 @@ $book->registerMetafields(
 	]
 );
 ```
+
+# Changelog
+[1.0.0]()
+
+[1.1.0]()
 
 
 
