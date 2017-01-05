@@ -3,7 +3,7 @@
     "description": "Custom post type module",
     "type": "library",
     "require": {
-        "php": "^5.4"
+        "php": ">5.4"
     },
     "license": "MIT",
     "authors": [
@@ -15,7 +15,10 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "VA\\CPTer\\": "src/vietartisans/Cpter/"
+            "VA\\Cpter\\": ""
         }
+    },
+    "require-dev": {
+        "webdevstudios/cmb2": "v2.2.3.1"
     }
 }

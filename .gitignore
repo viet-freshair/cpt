@@ -1,2 +1,3 @@
-cpt.php
+module.php
 vendor/
+composer.lock
