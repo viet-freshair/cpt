@@ -65,7 +65,7 @@ class CptEngine
         
         add_action('init', [$this, 'registerPostType']);
 
-        add_action('cmb2_admin_init', [$this, 'registerCMB2']);
+        //add_action('cmb2_admin_init', [$this, 'registerCMB2']);
     }
     
     /**
@@ -146,7 +146,7 @@ class CptEngine
 
         $this->meta = $meta;
 
-        //add_action('cmb2_admin_init', [$this, 'registerCMB2']);
+        add_action('cmb2_admin_init', [$this, 'registerCMB2']);
     }
 
     /**
