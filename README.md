@@ -1,4 +1,4 @@
-# CPTer
+# CPTER
 CPT Module
 
 This module helps register a custom post type simpler.
@@ -9,20 +9,29 @@ composer require vietartisans/cpter
 ```
 
 # Usage
-$post_type = new VA\CPTer\Provider($name, $single, $plural, $args);
-* $name (string): name/slug of custom post type. It must be unique.
-* $single (string): Single lable of custom post type.
-* $plural (string): Plural label of custom post type.
-* $args (array): an option array for custom post type. [See detail here](https://codex.wordpress.org/Function_Reference/register_post_type)
+
+##1 Use alias function `registerCpter()`
+```
+registerCpter('book', 'Book', 'Books');
+```
+##2 Create a CPT child class
+```
+$post_type = new VA\CPT($name, $single, $plural, $args)
+```
+
+* `$name` (string): name/slug of custom post type. It must be unique.
+* `$single` (string): Single lable of custom post type.
+* `$plural` (string): Plural label of custom post type.
+* `$args` (array): an option array for custom post type. [See detail here](https://codex.wordpress.org/Function_Reference/register_post_type)
 
 **Example 1: Register a custom post type with default arguments**
-## Register a custom post type with default arguments
+### Register a custom post type with default arguments
 ```php
-$book = new VA\Cpter\CptEngine('book', 'Book', 'Books');
+$book = new VA\CPT('book', 'Book', 'Books');
 ```
-## Register a custom post type with specific arguments
+### Register a custom post type with specific arguments
 ```php
-$song = new VA\Cpter\CptEngine(
+$song = new VA\CPT(
     'song', 
     'Song', 
     'Songs', 
@@ -30,7 +39,7 @@ $song = new VA\Cpter\CptEngine(
 );
 ```
 
-## Register a custom post type with meta fields
+### Register a custom post type with meta fields
 **NOTE:** We are using CMB2 to create meta fields for custom post type. 
 See [here](https://github.com/WebDevStudios/CMB2/wiki/Basic-Usage) to find out how to use CMB2.
 You can see a list of available field types [here](https://github.com/WebDevStudios/CMB2/wiki/Field-Types#types).
@@ -90,9 +99,15 @@ $book->registerMetafields(
 ```
 
 # Changelog
-[1.0.0]()
+[1.2.0]()
+* Add alias function for creating custom post type object
+* Change namespace
 
 [1.1.0]()
+* Change structure
+
+[1.0.0]()
+* First init
 
 
 

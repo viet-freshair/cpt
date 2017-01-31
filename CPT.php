@@ -9,9 +9,9 @@
  * @subpackage cpter
  */
 
-namespace VA\Cpter;
+namespace VA;
 
-class CptEngine
+class CPT
 {
     /**
      * Custom post type name/slug
@@ -64,8 +64,6 @@ class CptEngine
         $this->args = $args;
         
         add_action('init', [$this, 'registerPostType']);
-
-        //add_action('cmb2_admin_init', [$this, 'registerCMB2']);
     }
     
     /**
@@ -77,7 +75,6 @@ class CptEngine
     {
         $result = register_post_type($this->type, $this->getArgs());
         
-        // check result return
         if (is_wp_error($result)) wp_die($result->get_error_message());
     }
     
@@ -88,7 +85,6 @@ class CptEngine
      */
     public function getArgs()
     {
-        // generate cpt label
 		$labels = array(
 			'name'               => $this->plural,
 			'singular_name'      => $this->single,
@@ -109,8 +105,7 @@ class CptEngine
 			'items_list_navigation' => sprintf(__('%s list navigation'), $this->plural),
 			'filter_items_list'     => sprintf(__('Filter %s list'), strtolower($this->plural))
 		);
-		
-		// Set default cpt parameters
+
 		$defaults = array(
 			'labels'             => [],
 			'public'             => true,
@@ -198,4 +193,22 @@ class CptEngine
         }
     }
     
+}
+
+if (!function_exists('registerCpter')) {
+    /**
+     * function alias for Cpter object
+     * 
+     * @since 1.2.0
+     * @param string $type
+     * @param string $single
+     * @param string $plural
+     * @param array  $args
+     * 
+     * @return CPT
+     */
+    function registerCpter($type, $single = '', $plural = '', $args = [])
+    {
+        return new CPT($type, $single, $plural, $args);
+    }
 }
