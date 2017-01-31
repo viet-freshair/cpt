@@ -9,6 +9,13 @@ composer require vietartisans/cpter
 ```
 
 # Usage
+$post_type = new VA\CPTer\Provider($name, $single, $plural, $args);
+* $name (string): name/slug of custom post type. It must be unique.
+* $single (string): Single lable of custom post type.
+* $plural (string): Plural label of custom post type.
+* $args (array): an option array for custom post type. [See detail here](https://codex.wordpress.org/Function_Reference/register_post_type)
+
+**Example 1: Register a custom post type with default arguments**
 ## Register a custom post type with default arguments
 ```php
 $book = new VA\Cpter\CptEngine('book', 'Book', 'Books');
@@ -86,6 +93,7 @@ $book->registerMetafields(
 [1.0.0]()
 
 [1.1.0]()
+
 
 
 
