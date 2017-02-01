@@ -2,7 +2,7 @@
 /**
  * This class is foundation of registration a custom post type
  * 
- * @use        register_post_type()
+ * @uses       register_post_type()
  * @link       https://codex.wordpress.org/Function_Reference/register_post_type
  * @since      1.0.0
  * @package    va
@@ -132,7 +132,7 @@ class CPT
      */
     public function registerMetafields($meta)
     {
-        if (!file_exists(__DIR__ . '/vendor/webdevstudios/cmb2/init.php')) {
+        if (!file_exists(dirname(dirname((__DIR__))) . '/webdevstudios/cmb2/init.php')) {
             wp_die(__('Not found CMB2 package. Run <code><b>composer require webdevstudios/cmb2 --dev</b></code> to install it.'));
         }
         
@@ -146,7 +146,9 @@ class CPT
 
         $this->meta = $meta;
         
-        require_once __DIR__ . '/vendor/webdevstudios/cmb2/init.php';
+        //require_once __DIR__ . '/vendor/webdevstudios/cmb2/init.php';
+        
+        require_once dirname(dirname((__DIR__))) . '/webdevstudios/cmb2/init.php';
         
         add_action('cmb2_admin_init', [$this, 'registerCMB2']);
 
