@@ -64,6 +64,7 @@ class CPT
         $this->args = $args;
         
         add_action('init', [$this, 'registerPostType']);
+    
     }
     
     /**
@@ -131,6 +132,10 @@ class CPT
      */
     public function registerMetafields($meta)
     {
+        if (!file_exists(__DIR__ . '/vendor/webdevstudios/cmb2/init.php')) {
+            wp_die(__('Not found CMB2 package. Run <code><b>composer require webdevstudios/cmb2 --dev</b></code> to install it.'));
+        }
+        
         if (!is_array($meta)) {
             wp_die(__('It must be an array.'));
         }
@@ -140,8 +145,11 @@ class CPT
         }
 
         $this->meta = $meta;
-
+        
+        require_once __DIR__ . '/vendor/webdevstudios/cmb2/init.php';
+        
         add_action('cmb2_admin_init', [$this, 'registerCMB2']);
+
     }
 
     /**
@@ -155,12 +163,6 @@ class CPT
      */
     public function registerCMB2()
     {
-        if (!file_exists(dirname(dirname(__DIR__)) . '/webdevstudios/cmb2/init.php')) {
-            wp_die(__('Not found CMB2 package. Run <code><b>composer require webdevstudios/cmb2 --dev</b></code> to install it.'));
-        }
-
-        require_once dirname(dirname(__DIR__)) . '/webdevstudios/cmb2/init.php';
-
         $prefix = '_vameta_';
 
         foreach ($this->meta as $section) {
