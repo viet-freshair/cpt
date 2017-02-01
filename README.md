@@ -99,6 +99,12 @@ $book->registerMetafields(
 ```
 
 # Changelog
+[1.2.2]()
+* Required cmb2 package
+
+[1.2.1]()
+* Fixed CMB2 issue #12
+
 [1.2.0]()
 * Add alias function for creating custom post type object
 * Change namespace
