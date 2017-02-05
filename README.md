@@ -64,7 +64,6 @@ composer require vietartisans/cpter
 registerCpter('book', 'Book', 'Books');
 ```
 ## 2. Create a CPT child class
-**Example 1: Register a custom post type with default arguments**
 ### Register a custom post type with default arguments
 ```php
 $book = new VA\CPT('book', 'Book', 'Books');
