@@ -29,19 +29,19 @@ $post_type = new VA\CPT($name, $single, $plural, $args)
 Default: if empty, `name` is set to value of `label`, and `singular_name` is set to value of `name`.
 * `name` - general name for the post type, usually plural. The same and overridden by $post_type_object->label. Default is Posts/Pages
 * `singular_name` - name for one object of this post type. Default is Post/Page
-* `add_new` - the add new text. The default is "Add New" for both hierarchical and non-hierarchical post types. When internationalizing this string, please use a gettext context matching your post type. Example: `_x(`Add New`, `product`);`
+* `add_new` - the add new text. The default is "Add New" for both hierarchical and non-hierarchical post types. When internationalizing this string, please use a gettext context matching your post type. Example: `_x('Add New', 'product');`
 * `add_new_item` - Default is Add New Post/Add New Page.
 * `edit_item` - Default is Edit Post/Edit Page.
 * `new_item` - Default is New Post/New Page.
 * `view_item` - Default is View Post/View Page.
-* `view_items` - Label for viewing post type archives. Default is `View Posts` / `View Pages`.
+* `view_items` - Label for viewing post type archives. Default is `View Posts / View Pages`.
 * `search_items` - Default is Search Posts/Search Pages.
 * `not_found` - Default is No posts found/No pages found.
 * `not_found_in_trash` - Default is No posts found in Trash/No pages found in Trash.
-* `parent_item_colon` - This string isn`t used on non-hierarchical types. In hierarchical ones the default is `Parent Page:`.
+* `parent_item_colon` - This string isn't used on non-hierarchical types. In hierarchical ones the default is `Parent Page:`.
 * `all_items` - String for the submenu. Default is All Posts/All Pages.
 * `archives` - String for use with archives in nav menus. Default is Post Archives/Page Archives.
-* `attributes` - Label for the attributes meta box. Default is `Post Attributes` / `Page Attributes`.
+* `attributes` - Label for the attributes meta box. Default is `Post Attributes / Page Attributes`.
 * `insert_into_item` - String for the media frame button. Default is Insert into post/Insert into page.
 * `uploaded_to_this_item` - String for the media frame filter. Default is Uploaded to this post/Uploaded to this page.
 * `featured_image` - Default is Featured Image.
