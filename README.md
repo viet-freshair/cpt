@@ -20,7 +20,7 @@ composer require vietartisans/cpter
 ## Args
 | Name | Type | Required | Description | Default |
 | ---- | ---- | -------- | ----------- | ------- |
-| [labels](#Labels) | array | no | An array of labels for this post type. By default, post labels are used for non-hierarchical post types and page labels for hierarchical ones | if empty, `name` is set to value of `label`, and `singular_name` is set to value of `name`
+| [create an anchor](#Labels)labels | array | no | An array of labels for this post type. By default, post labels are used for non-hierarchical post types and page labels for hierarchical ones | if empty, `name` is set to value of `label`, and `singular_name` is set to value of `name`
 | public | boolean | no | Controls how the type is visible to authors `(show_in_nav_menus, show_ui)` and readers `(exclude_from_search, publicly_queryable)` | false |
 | publicly_queryable | boolean | no | Whether queries can be performed on the front end as part of parse_request() | value of `public` argument |
 | show_ui | boolean | no | Whether to generate a default UI for managing this post type in the admin | value of `public` argument |
