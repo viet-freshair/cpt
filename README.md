@@ -1,4 +1,4 @@
-# CPTER
+# CPT
 CPT Module
 
 This module helps register a custom post type simpler.
@@ -66,11 +66,11 @@ registerCpter('book', 'Book', 'Books');
 ## 2. Create a CPT child class
 ### Register a custom post type with default arguments
 ```php
-$book = new VA\CPT('book', 'Book', 'Books');
+$book = new Vietfreshair\CPT('book', 'Book', 'Books');
 ```
 ### Register a custom post type with specific arguments
 ```php
-$song = new VA\CPT(
+$song = new Vietfreshair\CPT(
     'song', 
     'Song', 
     'Songs', 
