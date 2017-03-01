@@ -9,7 +9,7 @@
  * @subpackage cpter
  */
 
-namespace VA;
+namespace Vietfreshair;
 
 class CPT
 {
@@ -165,7 +165,7 @@ class CPT
      */
     public function registerCMB2()
     {
-        $prefix = '_vameta_';
+        $prefix = '_vfa_meta_';
 
         foreach ($this->meta as $section) {
 

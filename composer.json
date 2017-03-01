@@ -1,5 +1,5 @@
 {
-    "name": "vietartisans/cpter",
+    "name": "vietfreshair/cpt",
     "description": "Custom post type module",
     "type": "library",
     "require": {
@@ -8,15 +8,15 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Viet Artisans",
-            "email": "contact@vietartisans.io"
+            "name": "Duy Nguyen",
+            "email": "duyngha@gmail.com"
         }
     ],
     "minimum-stability": "dev",
     "autoload": {
         "files": ["helpers.php"],
         "psr-4": {
-            "VA\\": ""
+            "Vietfreshair\\": ""
         }
     },
     "require": {
